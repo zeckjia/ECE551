@@ -1,0 +1,15 @@
+Your overall score on the Final Exam: B
+Your overall score on the miniproject: 115
+The breakdown of the miniproject score is as follows
+ - Step 1 Functionality: 50 / 50 
+ - Step 2 Functionality: 30 / 30 
+ - Step 3 Functionality: 20 / 20
+ - Step 4 Functionality: 15 / 15 
+ - Penalty for valgrind errors: 0
+Total functionality: 115%  This accounts for 90% of your overall miniproject grade
+Quality summary: 
+ - Documentation: 100%
+ - Abstraction: 100%
+- Formatting: 100%
+Total Quality: 100%.  This is 10% of your overall miniproject grade
+

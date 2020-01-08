@@ -1,0 +1,30 @@
+# test built-in functions
+test (+ 1.2 2.6) 3.8
+test (+ -12 -2.6) -14.6
+test (- -10.8 -2.7) -8.1
+test (- 10.8 -2.7) 13.5
+test (* 10.2 6) 61.2
+test (* 0 6) 0
+test (* 1 -6) -6
+test (/ 5 1) 5
+test (/ 0 1) 0
+test (/ -13.9 10) -1.39
+test (% 10 2) 0
+test (% 13.596 5.86999) 3
+test (% -46 3) -1
+test (^ 2 10) 1024
+test (^ 1 100000) 1
+test (^ -2 9) -512
+test (floor 5.678) 5
+test (floor -5.678) -6
+test (ceil 5.0001) 6
+test (ceil -5.0001) -5
+test (round 5.69) 6
+test (round -5.69) -6
+test (round 5.12) 5
+test (round -5.12) -5
+test (logb 16 2) 4
+test (logb 100 10) 2
+test (select 10 0 1) 0
+test (select 0 0 1) 0
+test (select -100 0 1 ) 1

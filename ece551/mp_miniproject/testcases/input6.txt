@@ -1,0 +1,20 @@
+# test error cases of numint and mcint command
+define (h x y) = (/ (* y x ) (+ x 1))
+
+# numint
+numint h1 0.1 1 2 5 6 # undefined function
+numint h 0.3 1 2 5 6 # number of step size is not integer
+numint h 0.1 1a 2b 5s 6fff # invalib numbers
+numint h 0.1 1 2 5 # incomplete range pairs
+numint h 0.1 1 2 # insufficient range pair
+numint h 0.1 1 2 5 6 4 6 # more range pairs
+numint h 0.1 2 1 6 5 # a range should start from a smaller number and end at a larger number
+
+# mcint
+mcint h1 100 1 2 5 6 # undefined function
+mcint h 0.1 1 2 5 6 # number of random points should be a positive integer
+mcint h 100 1a 2b 5s 6fff # invalib numbers
+mcint h 100 1 2 5 # incomplete range pairs
+mcint h 200 1 2 # insufficient range pair
+mcint h 150 1 2 5 6 4 6 # more range pairs
+mcint h 100 2 1 6 5 # a range should start from a smaller number and end at a larger number

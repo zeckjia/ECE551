@@ -1,0 +1,131 @@
+(1) Run ./numerics < testcases/input1.txt
+    You will see that it prints:
+    (1.2 + 2.6) = 3.8 [correct]
+    (-12 + -2.6) = -14.6 [correct]
+    (-10.8 - -2.7) = -8.1 [correct]
+    (10.8 - -2.7) = 13.5 [correct]
+    (10.2 * 6) = 61.2 [correct]
+    (0 * 6) = 0 [correct]
+    (1 * -6) = -6 [correct]
+    (5 / 1) = 5 [correct]
+    (0 / 1) = 0 [correct]
+    (-13.9 / 10) = -1.39 [correct]
+    (10 % 2) = 0 [correct]
+    (13.596 % 5.86999) = 3 [correct]
+    (-46 % 3) = -1 [correct]
+    (2 ^ 10) = 1024 [correct]
+    (1 ^ 100000) = 1 [correct]
+    (-2 ^ 9) = -512 [correct]
+    floor(5.678) = 5 [correct]
+    floor(-5.678) = -6 [correct]
+    ceil(5.0001) = 6 [correct]
+    ceil(-5.0001) = -5 [correct]
+    round(5.69) = 6 [correct]
+    round(-5.69) = -6 [correct]
+    round(5.12) = 5 [correct]
+    round(-5.12) = -5 [correct]
+    (logb 16 2) = 4 [correct]
+    (logb 100 10) = 2 [correct]
+    (select 10 0 1) = 0 [correct]
+    (select 0 0 1) = 0 [correct]
+    (select -100 0 1) = 1 [correct]
+    which is correct because 'input1.txt' tests the correctness of all built-in functions.
+    
+(2) Run ./numerics < testcases/input2.txt
+    You will see that it prints:
+    defined f(x y z)
+    defined fx(yz)
+    defined g(x)
+    defined h(x y z)
+    defined f1(x56 y789)
+    defined f2g56(x5iu89)
+    defined h888(q w e r t y u i o p)
+    f(3 4.2 5) = 14.6 [correct]
+    f(3 4.2 5) = 14.6 [INCORRECT: expected 12]
+    f(-1 9.2 6) = -6.2 [correct]
+    f(3 4 5) = 14 [correct]
+    f(f(3 4.2 5) f(-1 9.2 6) f(3 4 5)) = -79.52 [correct]
+    f1(fx(10.456) f2g56(g(2.001))) = 21 [correct]
+    h888(1 1 1 1 1 1 1 1 1 1) = -2 [correct]
+    which is correct because this 'input2.txt' tests the correctness of define and test command. See details of test conditions in 'testcases/input2.txt'.
+    
+(3) Run ./numerics < testcases/input3.txt
+    You will see that it prints:
+    defined f(x y z)
+    followed by a lot of error messages, which is correct because 'input3.txt' tests the error cases of define command. See details of test conditions in 'testcases/input3.txt'.
+    
+(4) Run ./numerics < testcases/input4.txt
+    You will see that it prints:
+    defined f(x y z)
+    defined g(x)
+    followed by a lot of error messages, which is correct because 'input4.txt' tests the error cases of test command. See details of test conditions in 'testcases/input4.txt'.
+    
+(5) Run ./numerics < testcases/input5.txt
+    You will see that it prints:
+    defined f(x y z)
+    defined g(x)
+    defined h(x y)
+    105.75
+    105.656
+    -3.25
+    -3.06046
+    -24
+    -23.8669
+    3078.33
+    3083.73
+    90.417
+    88.7586
+    -31.1996
+    -32.0016
+    3.12596
+    3.12246
+    5.83201
+    5.82472
+    -2.92557
+    -2.99315
+    which is correct because 'input5.txt' tests the correctness of numint and mcint command. The numbers in the results above can be compared in pairs, since one of the two is calculated by numint and the other one is calculated by mcint. It is clear that every pair of numbers are close to each other. See details of test conditions in 'testcases/input5.txt'.
+    
+(6) Run ./numerics < testcases/input6.txt
+    You will see that it prints:
+    defined h(x y)
+    followed by a lot of error messages, which is correct because 'input6.txt' tests the error cases of numint and mcint command. See details of test conditions in 'testcases/input6.txt'.
+
+(7) Run ./numerics < testcases/input7.txt
+    You will see that it prints:
+    defined f(x y)
+    (2.0001, 0.000314015)
+    (2.00003, 0.000104685)
+    (1.99972, 0.00019917)
+    (1.99995, -0.000379144)
+    (1.65184e+11, 1.78706e+11)
+    defined g(x)
+    (9.7349e-05)
+    (-0.000326388)
+    (1.44866e+11)
+    (-1.39918e+11)
+    defined h(x y z)
+    (-1.89079e+25, 1.88157e+25, 3.68935e+25)
+    (-4.9499e+13, 4.94991e+13, 2.54649e+14)
+    (1.49415e+17, -1.49417e+17, 2.15095e+17)
+    (1.22705e+20, -1.22793e+20, -2.06902e+21)
+    (7.99649e+14, -7.99652e+14, 1.94418e+15)
+    defined f1(x)
+    (1.46955e+11)
+    (-1.53588e+11)
+    (0.00031952)
+    (-0.000329517)
+    which is correct because 'input7.txt' tests the correctness of max and min command. The results are all correct if the max or min exists. If the max or min is inf or -inf, it prints out a very large or very small number. See details of test conditions in 'testcases/input7.txt'.
+    
+(8) Run ./numerics < testcases/input8.txt
+    You will see that it prints:
+    defined f(x y)
+    followed by a lot of error messages, which is correct because 'input8.txt' tests the error cases of max and min command. See details of test conditions in 'testcases/input8.txt'.
+    
+(9) Run ./numerics < testcases/input9.txt
+    You will see that it prints a lot of error messages, which is correct because 'input9.txt' tests the error cases related to wrong command names.
+
+
+REFERNCES:
+[1] All of Programming
+[2] Assignments 083-085
+[3] cplusplus.com/reference/

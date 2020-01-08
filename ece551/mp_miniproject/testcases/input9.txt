@@ -1,0 +1,13 @@
+# test wrong command name
+defin (f x) = (+ 0 x)
+definee (f1 x ) = (+ 0 x)
+testt (f 1) 1
+tes (f2 1 ) 1
+numintt f 0.1 1 2
+numin f 0.1 0 1
+mcintt f 100 1 2
+mcin f 100 1 2
+maximum f 0.1 0.001 3 100000
+minimum f 0.1 0.001 3 100000
+ma f 0.1 0.001 3 100000
+mi f 0.1 0.001 3 100000

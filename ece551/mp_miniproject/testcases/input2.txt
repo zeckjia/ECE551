@@ -1,0 +1,16 @@
+# define command
+define (f x y z) = (+ (* x y) (- z 3)) # normal define 
+define (fx yz) = (+ yz (ceil yz)) # same letters as f but different combination
+define (g x) = (f (f x x 1.0) (f 1.2 6 (^ x 2)) x) # define a new function with user-defined function
+define (     h            x                   y       z      ) = (         *      x   (   +    (g    y)   z  )   ) # check arbitrary amount of spaces between tokens
+define (f1 x56 y789) = (% x56 y789) # parameters including digits
+define (f2g56 x5iu89) = (^ x5iu89 x5iu89) # parameters including mixed letters and digits
+define (h888 q w e r t y u i o p) = (f (f q w e) (f r t y) (f u i (+ o p))) # 10 parameters
+# test command
+test (f 3 4.2 5) 14.6
+test (f 3 4.2 5) 12
+test (f -1 9.2 6) -6.2 
+test (f      3      4         5)              14 # arbitrary amount of spaces
+test (f (f 3 4.2 5) (f -1 9.2 6) (f 3 4 5)) -79.52 # nested function call
+test (f1 (fx 10.456) (f2g56 (g 2.001))) 21 # muntiple layer of nested function call
+test (h888 1 1 1 1 1 1 1 1 1 1) -2

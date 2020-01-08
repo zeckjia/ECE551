@@ -1,0 +1,33 @@
+# test errors in define command
+# check re-define
+define (f x y z) = (+ (* x y) (- z 3)) # normal define 
+define (f x y z) = (+ x y) # re-define f with same parameters
+define (f xx) = (floor xx) # re-define f with different parameters
+
+# check parentheses errors
+define h x y z =  (+ (* x y) (- z 3))
+define (h x y z = (+ (* x y) (- z 3))
+define h x y z) = (+ (* x y) (- z 3))
+define ((h x y z)) = (+ (* x y) (- z 3)) # multiple parentheses on lhs are regarded as errors here
+define (h x y z) = (+ (* x y) (- z 3
+define (h x y z) = + * x y) (- z 3))
+define (h x y z) = (+ (* x y) (- z 3)))))
+define (h x y z) = + * x y - z 3
+define (h x) = floor x
+
+# check id errors on lhs
+define (1h 35x 8u9) = (+ 35x 8u9) # ids start with digit
+define (h. x_ u1*) = (+ x_ u1*) # ids include chars except letters and digits
+
+# check parameter errors on rhs
+define (h x y) = (+ x yy) # parameter on rhs was not a member defined on lhs
+define (h x y) = (+ x y y) # wrong number of parameters on rhs
+define (h x y) = (floor x y)
+define (h x y) = (select x y)
+define (h x y) = (f x y) # wrong number of parameters on rhs
+
+# check function call errors on rhs
+define (h x y) = (g x y) # no defined function 'g'
+
+# check '=' sign
+define (h x y) (+ x y)

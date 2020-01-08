@@ -1,0 +1,25 @@
+# test numint and mcint command
+define (f x y z) = (+ (* x y) (- z 3))
+define (g x) = (+ (f x x 1.0) (* x 5.1))
+define (h x y) = (/ (g x ) (+ x 1))
+
+numint f 0.1 1 2 5 6 100 101
+mcint f 1000 1 2 5 6 100 101
+numint f 0.2 -2 -1 -10 -9 -15 -14
+mcint f 1000 -2 -1 -10 -9 -15 -14
+numint f 0.1 -1 1 -1 1 -1 1
+mcint f 1000 -1 1 -1 1 -1 1
+
+numint g 0.01 10 20
+mcint g 100 10 20
+numint g 0.02 -10 -5
+mcint g 200 -10 -5
+numint          g          0.02          -5           1
+mcint g 500 -5 1
+
+numint h 0.1 1 2 5 6
+mcint h 1000 1 2 5 6
+numint h 0.1 -3 -2 -10 -9
+mcint h 1000 -3 -2 -10 -9
+numint h 0.1 -0.5 1 -0.5 1
+mcint h 1000 -0.5 1 -0.5 1

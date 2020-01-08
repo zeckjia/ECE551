@@ -1,0 +1,13 @@
+# test errors of max and min command
+define (f x y) = (+ (^ x 2) (- (^ y 2) (+ (* 4 x) 1)))
+
+min f1 0.1 0.0001 3 3 1000 # undefined function
+max f1 0.1 0.0001 3 3 1000 # undefined function
+
+min f 0.1 0.0001 3 3 -100 # max number of steps should be a positive integer
+max f 0.1 0.0001 3 3 -100 # max number of steps should be a positive integer
+
+max f 0.1 0.0000001 3 3 100 # too many iterations
+
+min f 0.1 0.0001 3 3 3 1000 # start point has wrong dimension (more)
+min f 0.1 0.0001 3 1000 # start point has wrong dimension (less)
